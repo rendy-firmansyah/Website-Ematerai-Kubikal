@@ -18,7 +18,7 @@ function Blog() {
       </div>
       <div className="flex mx-[12rem] items-center justify-between my-[4rem]">
         <div className="flex gap-4 tex-sm font-light text-[#8F9199]">
-          <a href="o" className="text-[#8F9199]">
+          <a href="/kategori" className="text-[#8F9199]">
             Produktivitas
           </a>
           <a href="o" className="text-[#8F9199]">
@@ -64,9 +64,7 @@ function Blog() {
                 </p>
               </div>
               <div>
-                <span>
-                  April 27,2024
-                </span>
+                <span>April 27,2024</span>
               </div>
             </div>
           </div>
