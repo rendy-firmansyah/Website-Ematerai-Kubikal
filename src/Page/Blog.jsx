@@ -78,25 +78,16 @@ function Blog() {
               <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
                 <FaLongArrowAltRight className="font-black text-white" />
               </div>
-            </div>
-          </a>
-          <div className="p-4">
-            <h2 className="text-xl font-bold">
-              Cara Membeli Meterai Online yang Resmi dan Aman
-            </h2>
-            <p>
-              Perkembangan teknologi seperti sekarang ini memang memberikan
-              banyak sekali perubahan,...
-            </p>
-            <span>30 April, 2024</span>
-          </div>
-        </article>
-        <article className="w-full border-2 ">
-          <a href="/blog-detail">
-            <div className="overflow-hidden relative group">
-              <img className="w-full" src={blog} alt="" />
-              <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
-                <FaLongArrowAltRight className="font-black text-white" />
+              <div>
+                <p>
+                  Mulai dari bulan Oktober tahun 2021, pemerintah sudah merilis
+                  e-meterai...
+                </p>
+              </div>
+              <div>
+                <span>
+                  April 27,2024
+                </span>
               </div>
             </div>
           </a>
