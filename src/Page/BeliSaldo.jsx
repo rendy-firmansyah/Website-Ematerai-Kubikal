@@ -38,11 +38,11 @@ function BeliSaldo() {
           <h6 className="text-[#8F9199] text-left pl-2 text-sm">
             Info: Pembelian saldo EMET (meterai elektronik) bisa dilakukan di
             aplikasi eMET, tersedia di{" "}
-            <a className="text-[#0068D6] no-underline" href="o">
+            <a className="link" href="o">
               Google Playstore
             </a>{" "}
             &{" "}
-            <a className="text-[#0068D6] no-underline" href="o">
+            <a className="link" href="o">
               Apple App Store
             </a>
             . Gunakan juga e-Meterai Instan untuk pembubuhan dokumen tanpa

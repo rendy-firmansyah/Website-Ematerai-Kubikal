@@ -7,6 +7,25 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+}
+.tes{
+    opacity: 0;
+}
+
+.link{
+    color: #0068D6;
     text-decoration: none !important;
-    list-style: none;
+}
+.link:hover{
+    color: #404040;
+}
+
+.link2{
+    color: #8F9199;
+    text-decoration: none !important;
+}
+
+.input{
+    border: 1px solid #ccc;
+    padding: 3px;
 }

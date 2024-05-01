@@ -2,6 +2,9 @@ import React from "react";
 import Header from "../component/Header";
 import { IoSearchSharp } from "react-icons/io5";
 import blog from "../assets/img/blog.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import Footer from "../component/Footer";
+import letter from "../assets/img/letter.png";
 
 function Blog() {
   return (
@@ -17,17 +20,17 @@ function Blog() {
         </p>
       </div>
       <div className="flex mx-[12rem] items-center justify-between my-[4rem]">
-        <div className="flex gap-4 tex-sm font-light text-[#8F9199]">
-          <a href="o" className="text-[#8F9199]">
+        <div className="flex gap-4 tex-sm font-light">
+          <a href="/produktivitas" className="link2">
             Produktivitas
           </a>
-          <a href="o" className="text-[#8F9199]">
+          <a href="/bisnis" className="link2">
             Bisnis
           </a>
-          <a href="o" className="text-[#8F9199]">
+          <a href="/event" className="link2">
             Event
           </a>
-          <a href="o" className="text-[#8F9199]">
+          <a href="/keuangan" className="link2">
             Keuangan
           </a>
         </div>
@@ -47,32 +50,94 @@ function Blog() {
           </form>
         </div>
       </div>
-      <article>
-        <div className="bg-white border-2 w-1/3 mx-[2rem]">
-          <div className="atas hover:bg-black">
-            <img className="w-full" src={blog} alt="" />
-          </div>
-          <div className="bawah">
-            <div>
-              <div>
-                <h2>pppp</h2>
-              </div>
-              <div>
-                <p>
-                  Mulai dari bulan Oktober tahun 2021, pemerintah sudah merilis
-                  e-meterai...
-                </p>
-              </div>
-              <div>
-                <span>
-                  April 27,2024
-                </span>
+      <div className="grid grid-rows-1 grid-flow-col gap-4 px-[2rem]">
+        <article className="w-full border-2">
+          <a href="/blog-detail" className="group">
+            <div className="relative overflow-hidden">
+              <img className="w-full" src={blog} alt="" />
+              <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
+                <FaLongArrowAltRight className="font-black text-white" />
               </div>
             </div>
+          </a>
+          <div className="p-4">
+            <h2 className="text-xl font-bold">
+              Cara Membeli Meterai Online yang Resmi dan Aman
+            </h2>
+            <p>
+              Perkembangan teknologi seperti sekarang ini memang memberikan
+              banyak sekali perubahan,...
+            </p>
+            <span>30 April, 2024</span>
+          </div>
+        </article>
+        <article className="w-full border-2 ">
+          <a href="/blog-detail">
+            <div className="overflow-hidden relative group">
+              <img className="w-full" src={blog} alt="" />
+              <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
+                <FaLongArrowAltRight className="font-black text-white" />
+              </div>
+            </div>
+          </a>
+          <div className="p-4">
+            <h2 className="text-xl font-bold">
+              Cara Membeli Meterai Online yang Resmi dan Aman
+            </h2>
+            <p>
+              Perkembangan teknologi seperti sekarang ini memang memberikan
+              banyak sekali perubahan,...
+            </p>
+            <span>30 April, 2024</span>
+          </div>
+        </article>
+        <article className="w-full border-2 ">
+          <a href="/blog-detail">
+            <div className="overflow-hidden relative group">
+              <img className="w-full" src={blog} alt="" />
+              <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
+                <FaLongArrowAltRight className="font-black text-white" />
+              </div>
+            </div>
+          </a>
+          <div className="p-4">
+            <h2 className="text-xl font-bold">
+              Cara Membeli Meterai Online yang Resmi dan Aman
+            </h2>
+            <p>
+              Perkembangan teknologi seperti sekarang ini memang memberikan
+              banyak sekali perubahan,...
+            </p>
+            <span>30 April, 2024</span>
+          </div>
+        </article>
+      </div>
+      <div className="flex justify-center text-sm mx-auto gap-2 my-[2rem]">
+        <button className="px-5 py-3 bg-[#7C7CFC] text-white font-bold rounded-md">
+          Load More
+        </button>
+      </div>
+      <div className="flex items-center justify-evenly p-[3rem] bg-[#7C7CFC] w-full">
+        <div className="xl:w-1/2 w-full p-3 ">
+          <h2 className="font-bold text-3xl text-white ">
+            Stay updated with momofin by signing up for our newsletter
+          </h2>
+          <p className="text-white">
+            By subscribing to our newsletter, you are allowing Momofin to send
+            marketing emails. You may opt out at any time. View Momofin’s{" "}
+            <a href="/" className="link">
+              Privacy Policy
+            </a>
+            .
+          </p>
+        </div>
+        <div className="">
+          <div className="xl:w-[300px] w-full">
+            <img src={letter} alt="" />
           </div>
         </div>
-      </article>
-      <div>okokokko</div>
+      </div>
+      <Footer />
     </div>
   );
 }
