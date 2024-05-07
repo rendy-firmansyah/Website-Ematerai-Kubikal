@@ -4,7 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom/dist";
 import BeliSaldo from "./Page/BeliSaldo";
 import Login from "./Page/Login";
 import Blog from "./Page/Blog";
-import Kategori from "./Page/Kategori";
+import Produktivitas from "./Page/Produktivitas";
+import Bisnis from "./Page/Bisnis";
+import Event from "./Page/Event";
+import Keuangan from "./Page/Keuangan";
 
 const Router = () => {
   return (
@@ -15,7 +18,10 @@ const Router = () => {
           <Route path="/beli-saldo" element={<BeliSaldo />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/kategori" element={<Kategori />} />
+          <Route path="/produktivitas" element={<Produktivitas />} />
+          <Route path="/bisnis" element={<Bisnis />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/keuangan" element={<Keuangan />} />
         </Routes>
       </BrowserRouter>
     </div>
