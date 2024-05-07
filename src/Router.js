@@ -5,6 +5,7 @@ import BeliSaldo from "./Page/BeliSaldo";
 import Login from "./Page/Login";
 import Blog from "./Page/Blog";
 import Kategori from "./Page/Kategori";
+import Features from "./Page/Features";
 
 const Router = () => {
   return (
@@ -12,6 +13,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />          
           <Route path="/beli-saldo" element={<BeliSaldo />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
