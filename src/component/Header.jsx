@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Logo from "../assets/img/Logo.png";
 import { Link } from "react-router-dom";
-import { FiLogIn } from "react-icons/fi";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { FaBars } from "react-icons/fa6";
 import MobileNav from "./MobileNav";
+import useAuth from "../hooks/useAuth";
 
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
     setOpenNav(false)
   }
 
+  const { isLoggedIn, handleLogout} = useAuth();
   return (
     <div className="flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4 px-[2rem] md:px-[4rem] xl:px-[6rem]">
       <div>
@@ -40,19 +42,22 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="flex items-center gap-3">
-        <Link
-          to="/login"
-          className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg"
-        >
-          <FiLogIn /> Login
-        </Link>
+        {isLoggedIn ? (
+          <button onClick={handleLogout} className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg">
+            <FiLogOut /> Logout
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg">
+            <FiLogIn /> Login
+          </Link>
+        )}
         <div className="block md:hidden text-black">
           <FaBars onClick={ToggleNav} />
         </div>
       </div>
-      {OpenNav && (
-        <MobileNav CloseNav={CloseNav} OpenNav={OpenNav}/>
-      )}
+      {OpenNav && <MobileNav CloseNav={CloseNav} OpenNav={OpenNav} />}
     </div>
   );
 };
