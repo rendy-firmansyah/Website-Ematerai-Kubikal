@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../component/Header";
+import Header from "../component/NavBar";
 import kategori1 from "../assets/img/kategori1.jpg";
 
 function Kategori() {

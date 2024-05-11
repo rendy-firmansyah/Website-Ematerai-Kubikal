@@ -5,6 +5,10 @@ import BeliSaldo from "./Page/BeliSaldo";
 import Login from "./Page/Login";
 import Blog from "./Page/Blog";
 import Kategori from "./Page/Kategori";
+import MateraiInstan from "./Page/MateraiInstan";
+import UploadMateraiInstan from "./Page/UploadMateraiInstan";
+import ProsesMaterai from "./Page/ProsesMaterai";
+;
 
 const Router = () => {
   return (
@@ -16,6 +20,9 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/kategori" element={<Kategori />} />
+          <Route path="/e-materai-instan" element={<MateraiInstan/>}/>
+          <Route path="/upload-emetinstan" element={<UploadMateraiInstan/>}/>
+          <Route path="/proses" element={<ProsesMaterai/>}/>
         </Routes>
       </BrowserRouter>
     </div>

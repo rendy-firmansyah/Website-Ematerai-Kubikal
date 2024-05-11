@@ -6,7 +6,7 @@ import peruri from "../assets/img/Peruri.png";
 import phone from "../assets/img/phone.png";
 import privacy from "../assets/img/privacy.png";
 import keamanan from "../assets/img/keamanan.png";
-import Header from "../component/Header";
+import Header from "../component/NavBar";
 import { Accordion } from "react-bootstrap";
 import blob from "../assets/img/blob.svg";
 import upload from "../assets/img/upload.png";
@@ -23,19 +23,23 @@ const Home = () => {
       <section className="flex flex-col-reverse lg:flex-row justify-between items-center my-[7rem] px-[2rem] md:px-[4rem] lg:px-[6rem]">
         <div className="kiri w-full xl:w-[60%] mt-[5rem]">
           <h1 className="font-extrabold text-[#001D3D] text-2xl md:text-[46px] mb-[25px] md:leading-[68px] capitalize">
-            e-Materai & Tanda Tangan Elektronik Pakai #EMETPastiBeres
+            e-Materai & Tanda Tangan Elektronik Pakai #kubikalMateraiInstan
           </h1>
           <p className="text-sm text-[#8F9199] font-medium mt-[0.2rem] mb-[3rem]">
             Pembubuhan e-meterai & tanda tangan digital mitra resmi Peruri,
-            cukup dengan satu aplikasi eMET yang sangat mudah, aman & pasti
+            cukup dengan satu aplikasi materai instan yang sangat mudah, aman & pasti
             beres untuk semua keperluan dokumen administrasi Anda.
           </p>
           <h3 className="text-base font-bold uppercase mt-4 mb-[2rem]">
             telah hadir di berbagai platform
           </h3>
           <div className="flex md:flex-row flex-col gap-2 pb-[5rem]">
-            <img width={180} height={53} src={Gplay} alt="" />
-            <img width={180} height={53} src={Apple} alt="" />
+          <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
+              <img src={Gplay} width={200} alt="" />
+            </a>
+            <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
+              <img src={Apple} width={180} alt="" />
+            </a>
           </div>
           <p className="font-light mb-[1rem] text-xs">
             DIGITAL PRODUCT ARE PROVIDED BY PERURI
@@ -47,9 +51,9 @@ const Home = () => {
         </div>
       </section>
       
-      <section className="w-full p-[3rem] bg-[#7C7CFC] flex flex-col xl:flex-row justify-center items-center">
+      <section className="w-full xl:relative p-[3rem] bg-[#7C7CFC] flex flex-col xl:flex-row justify-center items-center">
         <div className="mx-[6rem] w-full h-full ">
-          <img className="w-full" src={phone} width={570} height={700} alt="" />
+          <img className="xl:-top-10 xl:left-[13rem] xl:absolute" src={phone} width={500} alt="" />
         </div>
         <div className="w-full xl:mr-[6rem] mb-[4rem]">
           <h1 className="text-white font-bold md:text-[46px] capitalize text-2xl md:leading-[68px] mb-8">
@@ -63,7 +67,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="mt-[5rem] xl:mt-[10rem] mb-[8rem] w-full px-[2.5rem] xl:px-[9rem] flex flex-col xl:flex-row justify-between">
+      <section className="mt-[5rem] xl:mt-[15rem] mb-[8rem] w-full px-[2.5rem] xl:px-[9rem] flex flex-col xl:flex-row justify-between">
         <div className="w-full xl:w-1/2">
           <h2 className="font-bold text-base text-[#7c7cfc] mb-10">
             APA ITU E-MATERAI?
@@ -292,9 +296,13 @@ const Home = () => {
           terintegrasi dalam satu aplikasi.
         </p>
         <div className="flex gap-2">
-          <img width={180} height={53} src={Gplay} alt="" />
-          <img width={180} height={53} src={Apple} alt="" />
-        </div>
+            <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
+              <img src={Gplay} width={200} alt="" />
+            </a>
+            <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
+              <img src={Apple} width={180} alt="" />
+            </a>
+          </div>
       </section>
       <Footer/>
     </div>

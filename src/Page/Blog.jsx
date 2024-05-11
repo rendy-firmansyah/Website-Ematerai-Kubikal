@@ -1,10 +1,11 @@
 import React from "react";
-import Header from "../component/Header";
+
 import { IoSearchSharp } from "react-icons/io5";
 import blog from "../assets/img/blog.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Footer from "../component/Footer";
 import letter from "../assets/img/letter.png";
+import Header from "../component/NavBar";
 
 function Blog() {
   return (
@@ -16,7 +17,7 @@ function Blog() {
         </h2>
         <p className="text-center text-gray-600 mt-4">
           Temukan beragam info terbaru & menarik seputar tips seputar dunia
-          bisnis melalui artikel, insight, case study, e-book di MomofinGO blog.{" "}
+          bisnis melalui artikel, insight, case study, e-book di Kubikal blog.{" "}
         </p>
       </div>
       <div className="flex mx-[12rem] items-center justify-between my-[4rem]">
@@ -35,11 +36,11 @@ function Blog() {
           </a>
         </div>
         <div className="w-1/2">
-          <form className="flex relative items-center  bg-white rounded-xl border-2 w-full px-4 py-2">
+          <form className="flex relative items-center bg-white rounded-xl border-2 w-full ">
             <input
               type="text"
               placeholder="Cari Artikel"
-              className=" bg-transparent focus:outline-none text-gray-800 placeholder-gray-500 flex-grow"
+              className=" bg-transparent focus:outline-none text-gray-800 border-none flex-grow"
             />
             <button
               type="submit"
@@ -78,16 +79,25 @@ function Blog() {
               <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
                 <FaLongArrowAltRight className="font-black text-white" />
               </div>
-              <div>
-                <p>
-                  Mulai dari bulan Oktober tahun 2021, pemerintah sudah merilis
-                  e-meterai...
-                </p>
-              </div>
-              <div>
-                <span>
-                  April 27,2024
-                </span>
+            </div>
+          </a>
+          <div className="p-4">
+            <h2 className="text-xl font-bold">
+              Cara Membeli Meterai Online yang Resmi dan Aman
+            </h2>
+            <p>
+              Perkembangan teknologi seperti sekarang ini memang memberikan
+              banyak sekali perubahan,...
+            </p>
+            <span>30 April, 2024</span>
+          </div>
+        </article>
+        <article className="w-full border-2 ">
+          <a href="/blog-detail">
+            <div className="overflow-hidden relative group">
+              <img className="w-full" src={blog} alt="" />
+              <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
+                <FaLongArrowAltRight className="font-black text-white" />
               </div>
             </div>
           </a>
@@ -111,13 +121,15 @@ function Blog() {
       <div className="flex items-center justify-evenly p-[3rem] bg-[#7C7CFC] w-full">
         <div className="xl:w-1/2 w-full p-3 ">
           <h2 className="font-bold text-3xl text-white ">
-            Stay updated with momofin by signing up for our newsletter
+            Dapatkan informasi terbaru dari kubikal dengan berlangganan buletin
+            kami
           </h2>
           <p className="text-white">
-            By subscribing to our newsletter, you are allowing Momofin to send
-            marketing emails. You may opt out at any time. View Momofin’s{" "}
-            <a href="/" className="link">
-              Privacy Policy
+            Dengan berlangganan ke buletin kamu and mengizinkan Kubikal untuk
+            mengirimkan email pemasaran terbaru dari kubikal. Anda bisa berhenti
+            kapan saja. Lihat Kebijakan dan Privasi Kubikal 
+            <a href="/" className="link ">
+               Privacy Policy
             </a>
             .
           </p>
