@@ -1,11 +1,39 @@
-import React, { useState } from "react";
+import React, { useState } from  "react";
 import logo from "../assets/img/Logo.png";
 import bg from "../assets/img/bg-ungu.jpg";
 import bglogin from "../assets/img/bg-login.jpg";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import useAuth from '../hooks/useAuth';
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const { handleLogin } = useAuth()
+  
+
+  const [form, setForm] = useState({
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value
+    });
+  }
+
+  const navigate = useNavigate();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const loginSuccess = await handleLogin(form.email, form.password);
+    if (loginSuccess) {
+      navigate("/");
+    }
+  }
+  console.log(form)
   const [show, setshow] = useState(false)
 
   const ShowPw = () => {

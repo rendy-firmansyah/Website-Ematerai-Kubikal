@@ -10,11 +10,14 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import MencobaPage from "./Page/MencobaPage";
 
 
+import AuthProvider from './provider/AuthProvider'
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      <Router/>
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   </React.StrictMode>
 );
