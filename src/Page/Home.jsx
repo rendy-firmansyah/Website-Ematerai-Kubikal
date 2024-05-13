@@ -6,7 +6,7 @@ import peruri from "../assets/img/Peruri.png";
 import phone from "../assets/img/phone.png";
 import privacy from "../assets/img/privacy.png";
 import keamanan from "../assets/img/keamanan.png";
-import Header from "../component/NavBar";
+import Header from "../component/Header";
 import { Accordion } from "react-bootstrap";
 import blob from "../assets/img/blob.svg";
 import upload from "../assets/img/upload.png";

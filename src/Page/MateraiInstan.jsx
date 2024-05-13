@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../component/NavBar";
+import Header from "../component/Header";
 import Footer from "../component/Footer";
 import peruri from "../assets/img/Peruri.png";
 import bg from "../assets/img/bg-emet.png";

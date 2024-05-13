@@ -5,7 +5,7 @@ import blog from "../assets/img/blog.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Footer from "../component/Footer";
 import letter from "../assets/img/letter.png";
-import Header from "../component/NavBar";
+import Header from "../component/Header";
 
 function Blog() {
   return (
