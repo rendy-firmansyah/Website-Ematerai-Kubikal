@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../component/Header";
+import Header from "../component/NavBar";
 import emet5 from "../assets/img/emet5.png";
 import emet10 from "../assets/img/emet10.png";
 import emet20 from "../assets/img/emet20.png";
@@ -38,11 +38,11 @@ function BeliSaldo() {
           <h6 className="text-[#8F9199] text-left pl-2 text-sm">
             Info: Pembelian saldo EMET (meterai elektronik) bisa dilakukan di
             aplikasi eMET, tersedia di{" "}
-            <a className="link" href="o">
+            <a className="link" href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
               Google Playstore
             </a>{" "}
             &{" "}
-            <a className="link" href="o">
+            <a className="link" href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
               Apple App Store
             </a>
             . Gunakan juga e-Meterai Instan untuk pembubuhan dokumen tanpa

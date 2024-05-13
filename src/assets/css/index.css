@@ -29,3 +29,13 @@
     border: 1px solid #ccc;
     padding: 3px;
 }
+
+.bg{
+    background: url("/src/assets/img/bg-emet.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.slick-slide > div {
+    margin: 0px 20px;
+}

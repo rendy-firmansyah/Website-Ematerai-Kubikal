@@ -9,6 +9,10 @@ import Produktivitas from "./Page/Produktivitas";
 import Bisnis from "./Page/Bisnis";
 import Event from "./Page/Event";
 import Keuangan from "./Page/Keuangan";
+import MateraiInstan from "./Page/MateraiInstan";
+import UploadMateraiInstan from "./Page/UploadMateraiInstan";
+import ProsesMaterai from "./Page/ProsesMaterai";
+;
 
 const Router = () => {
   return (
@@ -24,6 +28,9 @@ const Router = () => {
           <Route path="/bisnis" element={<Bisnis />} />
           <Route path="/event" element={<Event />} />
           <Route path="/keuangan" element={<Keuangan />} />
+          <Route path="/e-materai-instan" element={<MateraiInstan/>}/>
+          <Route path="/upload-emetinstan" element={<UploadMateraiInstan/>}/>
+          <Route path="/proses" element={<ProsesMaterai/>}/>
         </Routes>
       </BrowserRouter>
     </div>
