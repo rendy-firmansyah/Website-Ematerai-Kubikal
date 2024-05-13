@@ -13,7 +13,6 @@ import upload from "../assets/img/upload.png";
 import testi from "../assets/img/testi.png";
 import dokumen from "../assets/img/dokumen.png";
 import enterprise from "../assets/img/emet.png";
-
 import Footer from "../component/Footer";
 import { Fade } from "react-reveal";
 
@@ -21,7 +20,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Fade bottom>
+      <Fade top>
         <section className="flex flex-col-reverse lg:flex-row justify-between items-center my-[7rem] px-[2rem] md:px-[4rem] lg:px-[6rem]">
           <div className="kiri w-full xl:w-[60%] mt-[5rem]">
             <h1 className="font-extrabold text-[#001D3D] text-2xl md:text-[46px] mb-[25px] md:leading-[68px] capitalize">
