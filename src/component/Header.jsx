@@ -53,7 +53,7 @@ const Header = () => {
             <FiLogIn /> Login
           </Link>
         )}
-        <div className="block md:hidden text-black">
+        <div className={`block ${OpenNav ? "opacity-0" : "opacity-100"} z-20 xl:hidden text-black`}>
           <FaBars onClick={ToggleNav} />
         </div>
       </div>
