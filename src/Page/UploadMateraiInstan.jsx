@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import file from "../assets/img/file biru.svg";
 import file2 from "../assets/img/file putih.svg";
@@ -20,8 +20,6 @@ const UploadMateraiInstan = () => {
   };
   const allowedTypes = [
     "application/pdf",
-    "application/msword",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   ];
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -36,9 +34,11 @@ const UploadMateraiInstan = () => {
               state: { PdfFile: reader.result, FileName: selectedFile.name },
             });
           }, 3000);
-          // navigate("/proses", {
-          //   state: { PdfFile: reader.result, FileName: selectedFile.name },
-          // });
+          const maxSizeMB = 2;
+          if (file.size > maxSizeMB * 1024 * 1024) {
+            console.log("Ukuran file terlalu besar.");
+            return;
+          }
         };
         reader.readAsDataURL(selectedFile);
       } else {
@@ -74,12 +74,11 @@ const UploadMateraiInstan = () => {
   // };
 
   return (
-    
     <div>
       <header className="flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4 px-[2rem] md:px-[4rem] xl:px-[3rem]">
         <div className="flex gap-4 items-center text-[#0068D6] font-medium">
           <img src={Logo} alt="Logo" width={110} height={57} />
-          <a href="/e-materai-instan" className="link">
+          <a href="/e-materai-instan" className="link hidden md:block">
             e-Meterai Instan
           </a>
         </div>
@@ -93,16 +92,19 @@ const UploadMateraiInstan = () => {
         </div>
       </header>
       <div className="my-[9rem]">
-        <h1 className="text-center mx-8 text-3xl font-semibold mb-[4rem]">
+        <h1 className="text-center mx-8 text-lg px-2 md:text-3xl font-semibold mb-[4rem]">
           Mulai Kemudahan Pembubuhan e-Meterai Sekarang. Upload dan Tempel
           e-Meterai pada Dokumen Kamu di Sini
         </h1>
 
-        <label className="w-1/2 flex-col items-center flex justify-center mx-auto outline rounded-[.5rem] outline-8 border-2 border-dashed border-[#0068D6] outline-[#e6eaf8] p-[4rem]">
-          {/* {PdfFile && (
-            <div>
+        <label className="text-center w-[92%] md:w-1/2 flex-col items-center flex justify-center mx-auto outline rounded-[.5rem] outline-8 border-2 border-dashed border-[#0068D6] outline-[#e6eaf8] p-4">
+          {PdfFile && (
+            <>
               <FaFileArrowUp className="text-5xl text-[#42A4FF]" />
-              <div className="flex items-center gap-4 mt-3" role="status">
+              <div
+                className="flex justify-center items-center gap-4 mt-3"
+                role="status"
+              >
                 <svg
                   aria-hidden="true"
                   class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#6DADED]"
@@ -119,12 +121,15 @@ const UploadMateraiInstan = () => {
                     fill="currentFill"
                   />
                 </svg>
-                <span className="font-semibold text-lg">
-                  Colourful Minimal Brainstorm Roadmap Mind Map
-                </span>
+                <div className="flex items-center gap-4">
+                  <span className="font-semibold text-lg">{FileName}</span>
+                  <span className="text-gray-500 text-lg font-semibold">
+                    {(PdfFile.length / 1024).toFixed(2)} KB
+                  </span>
+                </div>
               </div>
-            </div>
-          )} */}
+            </>
+          )}
           {!PdfFile && (
             <>
               <input
@@ -132,7 +137,7 @@ const UploadMateraiInstan = () => {
                 className="hidden"
                 ref={fileInputRef}
                 onChange={handleFileChange}
-                accept=".pdf,.doc,.docx"
+                accept=".pdf"
               />
 
               <img className="mb-6" width={50} src={file} alt="" />

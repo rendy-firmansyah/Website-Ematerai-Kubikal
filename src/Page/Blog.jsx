@@ -11,16 +11,16 @@ function Blog() {
   return (
     <div>
       <Header />
-      <div className="flex flex-col w-1/2 mx-auto mt-[9rem] mb-[1.5rem]">
-        <h2 className="font-bold text-5xl text-balance text-center">
+      <div className="flex flex-col xl:w-1/2 mx-auto mt-[9rem] mb-[1.5rem]">
+        <h2 className="font-bold text-xl w-full px-10 xl:px-0 md:text-3xl xl:text-5xl text-center">
           Bagaimana mengelola dokumen pekerjaan biar #LebihCepatMakinHemat
         </h2>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center text-sm md:text-lg px-4 text-gray-600 mt-4">
           Temukan beragam info terbaru & menarik seputar tips seputar dunia
           bisnis melalui artikel, insight, case study, e-book di Kubikal blog.{" "}
         </p>
       </div>
-      <div className="flex mx-[12rem] items-center justify-between my-[4rem]">
+      <div className="flex gap-4 xl:gap-0 flex-col-reverse xl:flex-row xl:mx-[12rem] items-center justify-between my-[4rem]">
         <div className="flex gap-4 tex-sm font-light">
           <a href="/produktivitas" className="link2">
             Produktivitas
@@ -35,7 +35,7 @@ function Blog() {
             Keuangan
           </a>
         </div>
-        <div className="w-1/2">
+        <div className="xl:w-1/2 w-[90%]">
           <form className="flex relative items-center bg-white rounded-xl border-2 w-full ">
             <input
               type="text"
@@ -51,7 +51,7 @@ function Blog() {
           </form>
         </div>
       </div>
-      <div className="grid grid-rows-1 grid-flow-col gap-4 px-[2rem]">
+      <div className="grid grid-rows-1 md:grid-rows-2 xl:grid-rows-1 md:grid-flow-col gap-4 px-2 xl:px-[2rem]">
         <article className="w-full border-2">
           <a href="/blog-detail" className="group">
             <div className="relative overflow-hidden">
@@ -118,26 +118,24 @@ function Blog() {
           Load More
         </button>
       </div>
-      <div className="flex items-center justify-evenly p-[3rem] bg-[#7C7CFC] w-full">
-        <div className="xl:w-1/2 w-full p-3 ">
-          <h2 className="font-bold text-3xl text-white ">
+      <div className="flex flex-col-reverse xl:flex-row items-center justify-evenly xl:p-[3rem] bg-[#7C7CFC] w-full">
+        <div className="xl:w-1/2 w-full p-3">
+          <h2 className="font-bold text-[22px] text-3xl text-white ">
             Dapatkan informasi terbaru dari kubikal dengan berlangganan buletin
             kami
           </h2>
           <p className="text-white">
             Dengan berlangganan ke buletin kamu and mengizinkan Kubikal untuk
             mengirimkan email pemasaran terbaru dari kubikal. Anda bisa berhenti
-            kapan saja. Lihat Kebijakan dan Privasi Kubikal 
+            kapan saja. Lihat Kebijakan dan Privasi Kubikal
             <a href="/" className="link ">
-               Privacy Policy
+              Privacy Policy
             </a>
             .
           </p>
         </div>
-        <div className="">
-          <div className="xl:w-[300px] w-full">
-            <img src={letter} alt="" />
-          </div>
+        <div className="xl:w-[300px] w-[120px] mt-[3rem] xl:mt-0">
+          <img src={letter} alt="" />
         </div>
       </div>
       <Footer />

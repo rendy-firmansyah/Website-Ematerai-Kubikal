@@ -15,45 +15,53 @@ import dokumen from "../assets/img/dokumen.png";
 import enterprise from "../assets/img/emet.png";
 
 import Footer from "../component/Footer";
+import { Fade } from "react-reveal";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <section className="flex flex-col-reverse lg:flex-row justify-between items-center my-[7rem] px-[2rem] md:px-[4rem] lg:px-[6rem]">
-        <div className="kiri w-full xl:w-[60%] mt-[5rem]">
-          <h1 className="font-extrabold text-[#001D3D] text-2xl md:text-[46px] mb-[25px] md:leading-[68px] capitalize">
-            e-Materai & Tanda Tangan Elektronik Pakai #kubikalMateraiInstan
-          </h1>
-          <p className="text-sm text-[#8F9199] font-medium mt-[0.2rem] mb-[3rem]">
-            Pembubuhan e-meterai & tanda tangan digital mitra resmi Peruri,
-            cukup dengan satu aplikasi materai instan yang sangat mudah, aman & pasti
-            beres untuk semua keperluan dokumen administrasi Anda.
-          </p>
-          <h3 className="text-base font-bold uppercase mt-4 mb-[2rem]">
-            telah hadir di berbagai platform
-          </h3>
-          <div className="flex md:flex-row flex-col gap-2 pb-[5rem]">
-          <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
-              <img src={Gplay} width={200} alt="" />
-            </a>
-            <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
-              <img src={Apple} width={180} alt="" />
-            </a>
+      <Fade bottom>
+        <section className="flex flex-col-reverse lg:flex-row justify-between items-center my-[7rem] px-[2rem] md:px-[4rem] lg:px-[6rem]">
+          <div className="kiri w-full xl:w-[60%] mt-[5rem]">
+            <h1 className="font-extrabold text-[#001D3D] text-2xl md:text-[46px] mb-[25px] md:leading-[68px] capitalize">
+              e-Materai & Tanda Tangan Elektronik Pakai #kubikalMateraiInstan
+            </h1>
+            <p className="text-sm text-[#8F9199] font-medium mt-[0.2rem] mb-[3rem]">
+              Pembubuhan e-meterai & tanda tangan digital mitra resmi Peruri,
+              cukup dengan satu aplikasi materai instan yang sangat mudah, aman
+              & pasti beres untuk semua keperluan dokumen administrasi Anda.
+            </p>
+            <h3 className="text-base font-bold uppercase mt-4 mb-[2rem]">
+              telah hadir di berbagai platform
+            </h3>
+            <div className="flex md:flex-row flex-col gap-2 pb-[5rem]">
+              <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
+                <img src={Gplay} width={200} alt="" />
+              </a>
+              <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
+                <img src={Apple} width={180} alt="" />
+              </a>
+            </div>
+            <p className="font-light mb-[1rem] text-xs">
+              DIGITAL PRODUCT ARE PROVIDED BY PERURI
+            </p>
+            <img width={180} height={46} src={peruri} alt="" />
           </div>
-          <p className="font-light mb-[1rem] text-xs">
-            DIGITAL PRODUCT ARE PROVIDED BY PERURI
-          </p>
-          <img width={180} height={46} src={peruri} alt="" />
-        </div>
-        <div className="kannan w-full xl:w-1/2 xl:ml-[4rem] xl:mb-[8rem]">
-          <img src={girl} alt="" />
-        </div>
-      </section>
-      
+          <div className="kannan w-full xl:w-1/2 xl:ml-[4rem] xl:mb-[8rem]">
+            <img src={girl} alt="" />
+          </div>
+        </section>
+      </Fade>
+
       <section className="w-full xl:relative p-[3rem] bg-[#7C7CFC] flex flex-col xl:flex-row justify-center items-center">
         <div className="mx-[6rem] w-full h-full ">
-          <img className="xl:-top-10 xl:left-[13rem] xl:absolute" src={phone} width={500} alt="" />
+          <img
+            className="xl:-top-10 xl:left-[13rem] xl:absolute"
+            src={phone}
+            width={500}
+            alt=""
+          />
         </div>
         <div className="w-full xl:mr-[6rem] mb-[4rem]">
           <h1 className="text-white font-bold md:text-[46px] capitalize text-2xl md:leading-[68px] mb-8">
@@ -181,7 +189,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       <section>
         <h1 className=" text-center text-xl px-[1rem] md:text-3xl font-bold my-[6rem] ">
           3 Langkah Pembubuhan e-Meterai & e-Signature
@@ -296,15 +304,15 @@ const Home = () => {
           terintegrasi dalam satu aplikasi.
         </p>
         <div className="flex gap-2">
-            <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
-              <img src={Gplay} width={200} alt="" />
-            </a>
-            <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
-              <img src={Apple} width={180} alt="" />
-            </a>
-          </div>
+          <a href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
+            <img src={Gplay} width={200} alt="" />
+          </a>
+          <a href="https://apps.apple.com/id/app/emet-meterai-tanda-tangan/id1604423824">
+            <img src={Apple} width={180} alt="" />
+          </a>
+        </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -6,11 +6,11 @@ const Features = () => {
   return (
     <div>
       <Header />
-      <div className="py-5 px-10 sm:px-4 md:px-10 lg:px-6 mt-8 mb-8 mx-auto sm:mx-16">
+      <div className="py-5 px-3 sm:px-4 md:px-10 lg:px-6 mt-8 mb-8 mx-auto sm:mx-16">
         <div className="container mx-auto">
           <div className="flex flex-col-reverse sm:flex-row mb-6 mt-[78px] mx-auto justify-center">
             <div className="flex flex-col  col-lg-6">
-              <div className="text-4xl md:text-5xl lg:text-[46px] font-bold text-[#493352] mb-[25px] lg:leading-[68px]">
+              <div className="text-2xl md:text-5xl lg:text-[46px] font-bold text-[#493352] mb-[25px] lg:leading-[68px]">
                 Fitur Tanda tangan elektronik yang Anda inginkan
               </div>
               <div className="text-[18px] md:text-lg lg:text-base font-light mb-[34px] leading-[30px] block unicode-bidi-isolate">
@@ -89,7 +89,7 @@ const Features = () => {
               />
             </div>
           </div>
-          <div className="py-5 px-10 sm:px-4 md:px-10 lg:px-6 mt-8 mb-8 mx-auto sm:mx-16">
+          <div className="xl:py-5 sm:px-4 md:px-10 lg:px-6 xl:mt-8 xl:mb-8 mx-auto sm:mx-16">
             <div className="container mx-auto py-[10vh]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="flex flex-col space-y-6 col-lg-6">
@@ -99,13 +99,13 @@ const Features = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-4xl md:text-3xl lg:text-4xl font-bold text-[#493352] mb-12">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#493352] mb-12">
                     <div className="font-bold">
                       E-Meterai & E-Signature Request
                     </div>
                   </div>
                   <div className="mb-5">
-                    <div className="text-lg sm:text-base lg:text-lg mb-10 font-light">
+                    <div className="text-lg sm:text-base lg:text-lg font-light">
                       Meminta pihak lain untuk ikut menandatangani sebuah
                       dokumen elektronik tidak pernah semudah ini. Cukup
                       tambahkan pihak-pihak yang terlibat, dan mereka akan
@@ -117,9 +117,9 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="py-5 px-10 sm:px-4 md:px-10 lg:px-6 mt-8 mb-8 mx-auto sm:mx-16">
+          <div className=" sm:px-4 md:px-10 lg:px-6 mx-auto sm:mx-16">
             <div className="container mx-auto flex flex-col sm:flex-row items-center">
-              <div className="flex flex-col  sm:w-1/2 pr-8">
+              <div className="flex flex-col w-full sm:w-1/2 pr-8">
                 <div className="text-4xl md:text-3xl lg:text-4xl font-bold text-[#493352] mb-12">
                   Balance Top Up
                 </div>

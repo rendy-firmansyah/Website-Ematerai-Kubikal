@@ -6,7 +6,7 @@ import { FiZoomOut } from "react-icons/fi";
 import tes from "../assets/img/tes pdf.png";
 import Draggable from "react-draggable";
 import { IoIosChatbubbles, IoIosCloseCircle } from "react-icons/io";
-import materai2 from "../assets/img/materai1000.png";
+import materai2 from "../assets/img/meterai-elektronik-10000.jpg"
 import file from "../assets/img/signature.png";
 import { PiWarningCircle } from "react-icons/pi";
 import PopUp from "../component/PopUp";
@@ -21,6 +21,10 @@ const ProsesMaterai = () => {
   const [nextId, setNextId] = useState(1);
   const location = useLocation();
   console.log("lokasiiiii", location);
+
+  useEffect(() => {
+    
+  }, [location])
 
   const handleClose = (id) => {
     setShowMaterai(showMaterai.filter((materai) => materai.id !== id));
@@ -39,7 +43,7 @@ const ProsesMaterai = () => {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
-    <div>
+    <div className="w-screen">
       {PopUpp && <PopUp handleClose={handleClose} />}
       {showMaterai.map((materai) => (
         <Draggable
@@ -47,7 +51,7 @@ const ProsesMaterai = () => {
           defaultPosition={{ x: materai.x, y: materai.y }}
         >
           <div className="absolute z-10">
-            <div className="absolute top-0 right-0">
+            <div className="absolute -top-7 -right-5">
               <span
                 onClick={() => handleClose(materai.id)}
                 className="text-3xl text-black cursor-pointer"
@@ -64,7 +68,11 @@ const ProsesMaterai = () => {
         <div className="flex justify-between px-4 sm:px-10 py-4 items-center w-fit min-w-full flex-nowrap">
           <div className="flex items-center gap-3 mr-2 text-ellipsis overflow-hidden whitespace-nowrap">
             <FaFile className="text-xl text-[#7C7CFC]" />
-            <span>{location.state.FileName}</span>
+            <span>
+              {location.state && location.state.FileName
+                ? location.state.FileName
+                : "File Name Not Available"}
+            </span>
           </div>
           <div>
             <button className="bg-[#7C7CFC] text-white rounded px-4 py-2 whitespace-nowrap">
@@ -73,7 +81,8 @@ const ProsesMaterai = () => {
           </div>
         </div>
       </header>
-      <section className="bg-white w-[360PX] fixed z-10 transition-all duration-300 overflow-auto left-0">
+
+      <section className="bg-white -bottom-5 hidden xl:block w-[360PX] fixed z-10 transition-all duration-300 overflow-auto left-0">
         <div className="relative p-3 flex flex-col">
           <div className="space-y-4 mt-2">
             <button
@@ -173,35 +182,36 @@ const ProsesMaterai = () => {
         </div>
       </section>
 
-      <section className="bg-[#E4E7EC] mt-20 ml-[360px] z-50">
+      <section className="bg-[#E4E7EC] xl:py-[9rem] relative mt-20 md:mt-0 md:ml-[360px]">
         <div className="w-full overflow-x-auto text-center">
           <div className="w-full flex items-center justify-center h-full border-none p-3">
-            {location.state.PdfFile && (
+            {location.state && location.state.PdfFile ? (
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                 <Viewer
                   plugins={[defaultLayoutPluginInstance]}
                   fileUrl={location.state.PdfFile}
                 />
               </Worker>
+            ) : (
+              <h1>No PDF File Found</h1>
             )}
             {!location.state.PdfFile && <h1>No file Here</h1>}
-            {console.log("ISI FILE", location.state.PdfFile)}
           </div>
         </div>
         <div className="overflow-auto sticky bottom-0 left-0 w-full bg-[#F2F4F7] shadow">
-          <div className="flex p-5 w-fit min-w-full justify-center flex-nowrap">
-            <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none">
-              <FiZoomIn />
-            </button>
-            <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none">
-              <FiZoomOut />
-            </button>
-            <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none"></button>{" "}
-            {/* Placeholder button */}
-            <div></div> {/* Placeholder */}
-            <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none"></button>{" "}
-            {/* Placeholder button */}
-          </div>
+          {/* <div className="flex p-5 w-fit min-w-full justify-center flex-nowrap">
+        <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none">
+          <FiZoomIn />
+        </button>
+        <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none">
+          <FiZoomOut />
+        </button>
+        <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none"></button>{" "}
+
+        <div></div>
+        <button className="w-10 h-10 text-2xl rounded flex items-center justify-center bg-[#E4E7EC] hover:bg-[#cdcfd3] active:bg-[#bebfc4] mx-2 flex-none"></button>{" "}
+
+      </div> */}
         </div>
       </section>
     </div>

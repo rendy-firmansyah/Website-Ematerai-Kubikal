@@ -21,7 +21,7 @@ const Header = () => {
         <div>
           <img src={Logo} alt="Logo" width={110} height={57} />
         </div>
-        <div className="hidden md:flex md:gap-3 xl:gap-[2rem] text-sm font-medium">
+        <div className="hidden xl:flex md:gap-3 xl:gap-[2rem] text-sm font-medium">
           <NavLink to="/" className="nav-link">
             Beranda
           </NavLink>
@@ -41,11 +41,11 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/login"
-            className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg"
+            className="no-underline hidden xl:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg"
           >
             <FiLogIn /> Login
           </Link>
-          <div className="block md:hidden text-black">
+          <div className={`block ${OpenNav ? "opacity-0" : "opacity-100"} z-20 xl:hidden text-black`}>
             <FaBars onClick={ToggleNav} />
           </div>
         </div>

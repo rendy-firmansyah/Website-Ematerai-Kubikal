@@ -33,9 +33,9 @@ function BeliSaldo() {
   return (
     <div>
       <Header />
-      <div className="mx-[12rem] p-[10px] ">
-        <div className="mt-[7rem] bg-[#FFE7C4] w-full p-2 font-medium rounded-[10px] mb-4">
-          <h6 className="text-[#8F9199] text-left pl-2 text-sm">
+      <div className="xl:mx-[12rem] xl:p-[10px] px-2 ">
+        <div className="mt-[7rem] bg-[#FFE7C4] p-2 font-medium rounded-[10px] mb-4">
+          <h6 className="text-[#8F9199] text-left pl-2 text-[16px] xl:text-sm">
             Info: Pembelian saldo EMET (meterai elektronik) bisa dilakukan di
             aplikasi eMET, tersedia di{" "}
             <a className="link" href="https://play.google.com/store/search?q=emet+e-meterai&c=apps">
@@ -49,11 +49,12 @@ function BeliSaldo() {
             daftar!
           </h6>
         </div>
-        <h4 className="text-[#8F9199] mb-[.5rem]">KUBIKAL- MATERAI</h4>
-        <section className="flex justify-between items-center mb-[3rem]">
+        <h4 className="text-[#8F9199] mb-[.5rem]">E - MATERAI</h4>
+
+        <section className="flex flex-wrap md:flex-nowrap md:justify-between md:items-center mb-[3rem]">
           {emets.map((emet, index) => (
-            <div key={index} className="flex flex-col items-start gap-3 w-1/3">
-              <img width={300} src={emet.image} alt="" />
+            <div key={index} className="flex flex-col items-start gap-3 w-1/2 md:w-1/3 mb-[3rem]">
+              <img className="w-[178px] md:w-[250px] xl:w-[300px]" src={emet.image} alt="" />
               <div>
                 <span className="text-base font-semibold">{emet.name}</span>
                 <img src={star} alt="" />
@@ -61,7 +62,7 @@ function BeliSaldo() {
               </div>
               <a
                 href="l"
-                className="rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
+                className="no-underline rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
               >
                 Beli Sekarang
               </a>
@@ -69,10 +70,11 @@ function BeliSaldo() {
           ))}
         </section>
         <h4 className="text-[#8F9199] mb-[.5rem]">ESGN</h4>
-        <section className="flex justify-between items-center mb-[3rem]">
+
+        <section className="flex flex-wrap justify-between items-center mb-[3rem]">
           {esgn.map((esgn, index) => (
-            <div key={index} className="flex flex-col items-start gap-3 w-1/3">
-              <img width={300} src={esgn.image} alt="" />
+            <div key={index} className="flex flex-col items-start gap-3 w-1/2 md:w-1/3 mb-[3rem]">
+              <img className="w-[178px] md:w-[250px] xl:w-[300px]" src={esgn.image} alt="" />
               <div>
                 <span className="text-base font-semibold">{esgn.name}</span>
                 <img src={star} alt="" />
@@ -80,7 +82,7 @@ function BeliSaldo() {
               </div>
               <a
                 href="l"
-                className="rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
+                className="no-underline rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
               >
                 Beli Sekarang
               </a>
@@ -88,10 +90,10 @@ function BeliSaldo() {
           ))}
         </section>
         <h4 className="text-[#8F9199] mb-[.5rem]">BUNDLING</h4>
-        <section className="flex justify-between items-center mb-[3rem]">
+        <section className="flex flex-wrap justify-between items-center mb-[3rem]">
           {bundle.map((bundle, index) => (
-            <div key={index} className="flex flex-col items-start gap-3 w-1/3">
-              <img width={300} src={bundle.image} alt="" />
+            <div key={index} className="flex flex-col items-start gap-3 w-1/2 md:w-1/3 mb-[3rem]">
+              <img className="w-[178px] md:w-[250px] xl:w-[300px]" src={bundle.image} alt="" />
               <div>
                 <span className="text-base font-semibold">{bundle.name}</span>
                 <img src={star} alt="" />
@@ -99,7 +101,7 @@ function BeliSaldo() {
               </div>
               <a
                 href="l"
-                className="rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
+                className="no-underline rounded-[6px] text-white text-sm px-4 py-2 bg-[#7C7CFC]"
               >
                 Beli Sekarang
               </a>
