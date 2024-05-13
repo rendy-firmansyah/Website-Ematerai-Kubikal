@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../component/NavBar";
+import Header from "../component/Header";
 import emet5 from "../assets/img/emet5.png";
 import emet10 from "../assets/img/emet10.png";
 import emet20 from "../assets/img/emet20.png";
