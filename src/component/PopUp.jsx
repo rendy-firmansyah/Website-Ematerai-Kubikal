@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 import Gplay from "../assets/img/google play.png"
 import Apple from "../assets/img/apple store.png"
 
-const PopUp = ({handleClose}) => {
+const PopUp = ({setPopUp}) => {
   return (
     <div className="fixed w-screen h-screen top-0 left-0 flex bg-black/50 z-50 overflow-auto py-6">
       <div
@@ -13,7 +13,7 @@ const PopUp = ({handleClose}) => {
         style={{ width: "500px" }}
       >
         <div className="flex justify-end">
-          <IoCloseSharp onClick={handleClose} className="text-2xl" />
+          <IoCloseSharp onClick={ () => setPopUp(false)} className="text-2xl" />
         </div>
         <div className="text-center mb-8">
           <img src={security} alt="" className="h-32 inline" />

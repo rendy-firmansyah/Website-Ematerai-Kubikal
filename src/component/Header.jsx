@@ -18,13 +18,13 @@ const Header = () => {
     setOpenNav(false)
   }
 
-  const { isLoggedIn, handleLogout} = useAuth();
+  // const { isLoggedIn, handleLogout} = useAuth();
   return (
     <div className="flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4 px-[2rem] md:px-[4rem] xl:px-[6rem]">
       <div>
         <img src={Logo} alt="Logo" width={110} height={57} />
       </div>
-      <div className="hidden md:flex md:gap-3 xl:gap-[2rem] text-sm font-medium">
+      <div className="hidden xl:flex md:gap-3 xl:gap-[2rem] text-sm font-medium">
         <NavLink to="/" className="nav-link">
           Beranda
         </NavLink>
@@ -42,17 +42,17 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="flex items-center gap-3">
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? (
           <button onClick={handleLogout} className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg">
             <FiLogOut /> Logout
           </button>
         ) : (
+        )} */}
           <Link
             to="/login"
-            className="no-underline hidden md:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg">
+            className="no-underline hidden xl:flex text-sm  items-center gap-2 bg-[#7C7CFC] px-4 py-2 text-white font-bold rounded-lg">
             <FiLogIn /> Login
           </Link>
-        )}
         <div className={`block ${OpenNav ? "opacity-0" : "opacity-100"} z-20 xl:hidden text-black`}>
           <FaBars onClick={ToggleNav} />
         </div>

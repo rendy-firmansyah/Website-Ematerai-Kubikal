@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import file from "../assets/img/file biru.svg";
 import file2 from "../assets/img/file putih.svg";
 import Logo from "../assets/img/Logo.png";
@@ -7,6 +7,7 @@ import Apple from "../assets/img/apple store.png";
 import { IoIosChatbubbles } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { FaFileArrowUp } from "react-icons/fa6";
+import { Document, Page, pdfjs } from "react-pdf";
 
 const UploadMateraiInstan = () => {
   const [PdfFile, setPdfFile] = useState(null);
@@ -14,12 +15,12 @@ const UploadMateraiInstan = () => {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
+
   const handleClick = () => {
     fileInputRef.current.click();
   };
-  const allowedTypes = [
-    "application/pdf",
-  ];
+  const allowedTypes = ["application/pdf"];
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -32,7 +33,7 @@ const UploadMateraiInstan = () => {
             navigate("/proses", {
               state: { PdfFile: reader.result, FileName: selectedFile.name },
             });
-          }, 3000);
+          }, 2000);
           const maxSizeMB = 2;
           if (file.size > maxSizeMB * 1024 * 1024) {
             console.log("Ukuran file terlalu besar.");
@@ -43,38 +44,12 @@ const UploadMateraiInstan = () => {
       } else {
         console.log("Tipe file tidak diizinkan.");
       }
-    } else {
-      console.log("Pilih file PDF.");
     }
   };
 
-  // const handleFileChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file && allowedTypes.includes(file.type)) {
-  //      let reader = new FileReader()
-  //      reader.readAsDataURL(file)
-  //      reader.onload = (e) => {
-  //       setSelectedFile(e.target.result)
-  //      }
-
-  //     const maxSizeMB = 2;
-  //     if (file.size > maxSizeMB * 1024 * 1024) {
-  //       console.log("Ukuran file terlalu besar.");
-  //       return;
-  //     }
-
-  //     setFilename(file.name);
-  //     setSelectedFile(file);
-  // navigate("/proses", {
-  //   state: { filename: file.name, selectedFile: file },
-  // });
-  //     console.log("File yang dipilih:", file);
-  //   }
-  // };
-
   return (
     <div>
-      <header className="flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4 px-[2rem] md:px-[4rem] xl:px-[3rem]">
+      <header className="flex  justify-between items-center fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4 px-[2rem] md:px-[4rem] xl:px-[3rem]">
         <div className="flex gap-4 items-center text-[#0068D6] font-medium">
           <img src={Logo} alt="Logo" width={110} height={57} />
           <a href="/e-materai-instan" className="link hidden md:block">
@@ -90,15 +65,40 @@ const UploadMateraiInstan = () => {
           </a>
         </div>
       </header>
-      <div className="my-[9rem]">
+      <div className="my-[9rem] items-center flex justify-center flex-col">
         <h1 className="text-center mx-8 text-lg px-2 md:text-3xl font-semibold mb-[4rem]">
           Mulai Kemudahan Pembubuhan e-Meterai Sekarang. Upload dan Tempel
           e-Meterai pada Dokumen Kamu di Sini
         </h1>
+        <div className="w-full md:w-1/2">
+          {!PdfFile && (
+            <label className="text-center flex items-center flex-col mx-2 bg-white outline rounded-[.5rem] outline-8 border-2 border-dashed border-[#0068D6] outline-[#e6eaf8] pad">
+              <input
+                type="file"
+                className="opacity-0"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                accept=".pdf"
+              />
 
-        <label className="text-center w-[92%] md:w-1/2 flex-col items-center flex justify-center mx-auto outline rounded-[.5rem] outline-8 border-2 border-dashed border-[#0068D6] outline-[#e6eaf8] p-4">
+              <img className="mb-6" width={50} src={file} alt="" />
+              <h1 className="text-lg">Letakkan file disini</h1>
+              <p>
+                Format file berupa pdf, doc, docx dengan ukuran maksimal 2MB
+              </p>
+              <p className="my-[1.5rem]">atau</p>
+              <button
+                className="flex rounded items-center gap-2 px-4 py-2 bg-[#0068D6] text-white hover:bg-blue-500 active:bg-blue-700"
+                onClick={handleClick}
+              >
+                <img src={file2} width={20} alt="" />
+                <span>Upload Dokumen dari Komputer</span>
+              </button>
+            </label>
+          )}
+
           {PdfFile && (
-            <>
+            <label className="flex-col items-center flex justify-center mx-2 md:mx-auto outline rounded-[.5rem] outline-8 border-2 border-dashed border-[#0068D6] outline-[#e6eaf8] pad">
               <FaFileArrowUp className="text-5xl text-[#42A4FF]" />
               <div
                 className="flex justify-center items-center gap-4 mt-3"
@@ -127,34 +127,9 @@ const UploadMateraiInstan = () => {
                   </span>
                 </div>
               </div>
-            </>
+            </label>
           )}
-          {!PdfFile && (
-            <>
-              <input
-                type="file"
-                className="hidden"
-                ref={fileInputRef}
-                onChange={handleFileChange}
-                accept=".pdf"
-              />
-
-              <img className="mb-6" width={50} src={file} alt="" />
-              <h1 className="text-lg">Letakkan file disini</h1>
-              <p>
-                Format file berupa pdf, doc, docx dengan ukuran maksimal 2MB
-              </p>
-              <p className="my-[1.5rem]">atau</p>
-              <button
-                className="flex rounded items-center gap-2 px-4 py-2 bg-[#0068D6] text-white hover:bg-blue-500 active:bg-blue-700"
-                onClick={handleClick}
-              >
-                <img src={file2} width={20} alt="" />
-                <span>Upload Dokumen dari Komputer</span>
-              </button>
-            </>
-          )}
-        </label>
+        </div>
 
         <a
           href="o"

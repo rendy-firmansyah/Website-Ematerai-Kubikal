@@ -12,7 +12,10 @@ import Keuangan from "./Page/Keuangan";
 import MateraiInstan from "./Page/MateraiInstan";
 import UploadMateraiInstan from "./Page/UploadMateraiInstan";
 import ProsesMaterai from "./Page/ProsesMaterai";
-;
+import Profile from "./Page/Profile";
+import AkunSaya from "./component/AkunSaya";
+import ProfileUbahPassword from "./component/ProfileUbahPassword";
+import ProfileHapusAkun from "./component/ProfileHapusAkun";
 
 const Router = () => {
   return (
@@ -31,6 +34,10 @@ const Router = () => {
           <Route path="/e-materai-instan" element={<MateraiInstan/>}/>
           <Route path="/upload-emetinstan" element={<UploadMateraiInstan/>}/>
           <Route path="/proses" element={<ProsesMaterai/>}/>
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile/general" element={<AkunSaya/>} />
+          <Route path="/profile/ubah-password" element={<ProfileUbahPassword/>} />
+          <Route path="/profile/hapus-akun" element={<ProfileHapusAkun/>} />
         </Routes>
       </BrowserRouter>
     </div>

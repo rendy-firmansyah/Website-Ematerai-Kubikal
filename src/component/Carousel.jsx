@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import star from "../assets/img/full star.svg";
-
+import avatar from "../assets/img/default_avatar.jpg"
 const Carousel = () => {
   const settings = {
     dots: true,
@@ -73,7 +73,7 @@ const Carousel = () => {
             className="bg-white outline outline-8 outline-[#B1B1FF] w-1/4 rounded-2xl mr-[30px] p-4 my-2"
           >
             <div className="flex items-center gap-3">
-              <div class="relative w-20 h-20 overflow-hidden bg-gray-100 bottom-2 rounded-full dark:bg-gray-600">
+              {/* <div class="relative w-20 h-20 overflow-hidden bg-gray-100 bottom-2 rounded-full dark:bg-gray-600">
                 <svg
                   class="absolute text-gray-400 top-2"
                   fill="currentColor"
@@ -86,7 +86,8 @@ const Carousel = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-              </div>
+              </div> */}
+              <img src={avatar} className="rounded-full w-20" alt="" />
               <div className="flex flex-col justify-start">
                 <span className="text-lg font-semibold">{item.name}</span>
                 <div className="flex">

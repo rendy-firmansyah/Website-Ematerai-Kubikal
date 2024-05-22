@@ -39,3 +39,19 @@
 .slick-slide > div {
     margin: 0px 20px;
 }
+
+
+.pad{
+    padding: 16px;
+}
+
+.toaster{
+    width: 600px !important;
+    transform: translateX(-20%) !important;
+}
+
+@media (min-width : 1024px){
+    .pad{
+        padding: 64px !important;
+    }
+}
