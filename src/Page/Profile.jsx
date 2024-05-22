@@ -12,11 +12,10 @@ import ProfileHapusAkun from "../component/ProfileHapusAkun";
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("akunSaya");
-  const history = useNavigate // Initial active tab
+
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
-    history(`/${tabName}`); // Update path URL
   };
 
   return (
@@ -32,7 +31,7 @@ const Profile = () => {
         <div className="flex flex-col items-center md:w-1/3 mt-4">
           <img
             src={avatar}
-            className="rounded-full w-24 h-24 mb-4"
+            className="rounded-full w-20 mb-2"
             alt="Avatar"
           />
           <h3 className="text-lg font-semibold">Hannan Amar</h3>

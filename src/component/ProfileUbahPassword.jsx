@@ -26,7 +26,6 @@ const ProfileUbahPassword = () => {
           type="password"
           id="username"
           className="border border-gray-300 p-2 rounded-md"
-          placeholder="Enter your first name"
         />
       </div>
       <div className="flex flex-col">
@@ -37,11 +36,10 @@ const ProfileUbahPassword = () => {
           type="password"
           id="username"
           className="border border-gray-300 p-2 rounded-md"
-          placeholder="Samakan dengan password yang telah anda buat"
         />
       </div>
 
-      <button className="gap-2 bg-[#7C7CFC] w-1/4 px-6 py-2 text-white font-bold rounded-lg mt-4">
+      <button className="gap-2 bg-[#7C7CFC] w-1/4 px-6 py-2 text-white font-bold rounded-[4px] mt-4">
         Perbarui Password
       </button>
     </div>

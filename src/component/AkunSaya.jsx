@@ -53,7 +53,7 @@ const AkunSaya = () => {
             />
           </div>
 
-          <button className="gap-2 bg-[#7C7CFC] px-6 py-2 text-white font-bold rounded-lg mt-4">
+          <button className="gap-2 bg-[#7C7CFC] px-6 py-2 w-1/4 text-white font-bold rounded-[4px] mt-4">
             Update Profile
           </button>
         </div>
