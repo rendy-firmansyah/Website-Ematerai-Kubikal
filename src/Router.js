@@ -16,6 +16,9 @@ import Profile from "./Page/Profile";
 import AkunSaya from "./component/AkunSaya";
 import ProfileUbahPassword from "./component/ProfileUbahPassword";
 import ProfileHapusAkun from "./component/ProfileHapusAkun";
+import Dashboard from "./Page/Dashboard";
+import Signed from "./Page/Documents/Signed";
+import DashboardLayout from "./component/DashboardLayout";
 
 const Router = () => {
   return (
@@ -23,7 +26,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/fitur" element={<Features />} />          
+          <Route path="/fitur" element={<Features />} />
           <Route path="/beli-saldo" element={<BeliSaldo />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
@@ -31,13 +34,20 @@ const Router = () => {
           <Route path="/bisnis" element={<Bisnis />} />
           <Route path="/event" element={<Event />} />
           <Route path="/keuangan" element={<Keuangan />} />
-          <Route path="/e-materai-instan" element={<MateraiInstan/>}/>
-          <Route path="/upload-emetinstan" element={<UploadMateraiInstan/>}/>
-          <Route path="/proses" element={<ProsesMaterai/>}/>
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/profile/general" element={<AkunSaya/>} />
-          <Route path="/profile/ubah-password" element={<ProfileUbahPassword/>} />
-          <Route path="/profile/hapus-akun" element={<ProfileHapusAkun/>} />
+          <Route path="/e-materai-instan" element={<MateraiInstan />} />
+          <Route path="/upload-emetinstan" element={<UploadMateraiInstan />} />
+          <Route path="/proses" element={<ProsesMaterai />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/general" element={<AkunSaya />} />
+          <Route
+            path="/profile/ubah-password"
+            element={<ProfileUbahPassword />}
+          />
+          <Route path="/profile/hapus-akun" element={<ProfileHapusAkun />} />
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/documents/signed" element={<Signed />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
