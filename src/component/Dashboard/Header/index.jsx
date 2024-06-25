@@ -1,3 +1,5 @@
+import { RxHamburgerMenu } from "react-icons/rx";
+
 const DashboardHeader = ({ setSidebarOpen, sidebarOpen }) => {
   return (
     <div className="bg-white flex w-full justify-between lg:justify-end p-4 border shadow-sm">
@@ -7,8 +9,8 @@ const DashboardHeader = ({ setSidebarOpen, sidebarOpen }) => {
           e.stopPropagation();
           setSidebarOpen(!sidebarOpen);
         }}
-        className="block rounded-sm border border-stroke bg-white p-1.5 shadow-sm lg:hidden">
-        open
+        className="block lg:hidden">
+        <RxHamburgerMenu className="w-6 h-6" />
       </button>
       <div>
         <div className="flex items-center gap-2">
