@@ -45,7 +45,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}>
       <div className="flex items-center justify-between gap-2 px-6 py-[1.375rem] lg:py-[1.625rem]">
-        <NavLink href="/" className="no-underline">
+        <NavLink to="/" className="no-underline">
           <h1 className="font-bold text-white text-4xl">LOGO</h1>
         </NavLink>
         <button

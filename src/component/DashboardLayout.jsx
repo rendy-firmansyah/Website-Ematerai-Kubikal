@@ -1,24 +1,22 @@
 import { useState } from "react";
-import Sidebar from "../component/Sidebar";
+import Sidebar from "./Dashboard/Sidebar";
 import { Outlet } from "react-router-dom";
+import DashboardHeader from "./Dashboard/Header";
 
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex min-h-screen overflow-hidden">
+    <div className="flex min-h-screen overflow-hidden bg-[#f4f5f7]">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <button
-        aria-controls="sidebar"
-        onClick={(e) => {
-          e.stopPropagation();
-          setSidebarOpen(!sidebarOpen);
-        }}
-        className="z-[99999] block rounded-sm border border-stroke bg-white p-1.5 shadow-sm lg:hidden">
-        open
-      </button>
-      <main>
-        <Outlet />
-      </main>
+      <div className="w-full">
+        <DashboardHeader
+          setSidebarOpen={setSidebarOpen}
+          sidebarOpen={sidebarOpen}
+        />
+        <main className="p-4">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
