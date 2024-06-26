@@ -98,9 +98,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 Dashboard
               </NavLink>
             </li>
-            <LinkGroup activeCondition={false}>
+            <LinkGroup activeCondition={pathname.includes("documents")}>
               {(handleClick, open) => {
-                if (pathname.includes("documents")) open = true;
                 return (
                   <>
                     <NavLink
