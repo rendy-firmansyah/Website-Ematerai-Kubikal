@@ -18,6 +18,7 @@ import ProfileUbahPassword from "./component/ProfileUbahPassword";
 import ProfileHapusAkun from "./component/ProfileHapusAkun";
 import Dashboard from "./Page/Dashboard";
 import Signed from "./Page/Documents/Signed";
+import Unsigned from "./Page/Documents/Unsigned";
 import DashboardLayout from "./component/DashboardLayout";
 
 const Router = () => {
@@ -47,6 +48,7 @@ const Router = () => {
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/documents/signed" element={<Signed />} />
+            <Route path="/documents/unsigned" element={<Unsigned />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -6,9 +6,9 @@ import DashboardHeader from "./Dashboard/Header";
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex min-h-screen overflow-hidden bg-[#f4f5f7]">
+    <div className="flex h-screen overflow-hidden bg-[#f4f5f7]">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <div className="w-full">
+      <div className="w-full flex-1 overflow-y-auto">
         <DashboardHeader
           setSidebarOpen={setSidebarOpen}
           sidebarOpen={sidebarOpen}

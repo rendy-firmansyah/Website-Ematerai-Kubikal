@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LinkGroup from "./LinkGroup";
 import { NavLink, useLocation } from "react-router-dom";
+import Logo from "../../../assets/img/logo-only.png";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const trigger = useRef(null);
@@ -45,32 +46,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}>
       <div className="flex items-center justify-between gap-2 px-6 py-[1.375rem] lg:py-[1.625rem]">
-        <NavLink to="/" className="no-underline">
-          <h1 className="font-bold text-white text-4xl">LOGO</h1>
+        <NavLink to="/" className="no-underline flex items-center gap-2">
+          <img src={Logo} alt="Logo" className="w-12" />
+          <h1 className="font-bold text-xl lg:text-2xl text-white">
+            Kubikal - Emet
+          </h1>
         </NavLink>
         <button
           ref={trigger}
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-controls="sidebar"
           aria-expanded={sidebarOpen}
-          className="block lg:hidden">
-          <svg
-            className="fill-[#8A99AF]"
-            width="20"
-            height="18"
-            viewBox="0 0 20 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M19 8.175H2.98748L9.36248 1.6875C9.69998 1.35 9.69998 0.825 9.36248 0.4875C9.02498 0.15 8.49998 0.15 8.16248 0.4875L0.399976 8.3625C0.0624756 8.7 0.0624756 9.225 0.399976 9.5625L8.16248 17.4375C8.31248 17.5875 8.53748 17.7 8.76248 17.7C8.98748 17.7 9.17498 17.625 9.36248 17.475C9.69998 17.1375 9.69998 16.6125 9.36248 16.275L3.02498 9.8625H19C19.45 9.8625 19.825 9.4875 19.825 9.0375C19.825 8.55 19.45 8.175 19 8.175Z"
-              fill=""
-            />
-          </svg>
-        </button>
+          className="block lg:hidden"></button>
       </div>
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         {/* MENU START */}
-        <nav className="mt-4 py-4 px-4 lg:px-6">
+        <nav className="py-4 px-4 lg:px-6">
           <h3 className="mb-4 text-sm font-semibold text-[#8A99AF]">MENU</h3>
           <ul className="mb-6 flex flex-col gap-1.5 pl-0">
             <li>
@@ -184,7 +175,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         <li>
                           <NavLink
                             to="/documents/signed"
-                            activeCondition="text-[#DEE4EE]"
                             className={({ isActive }) =>
                               "group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-gray-400 duration-300 ease-in-out hover:text-violet-400 no-underline " +
                               (isActive && "!text-[#DEE4EE]")

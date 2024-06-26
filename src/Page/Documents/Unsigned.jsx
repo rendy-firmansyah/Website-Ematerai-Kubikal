@@ -3,67 +3,67 @@ import { NavLink } from "react-router-dom";
 const documents = [
   {
     no: 1,
-    title: "Dokumen Negara",
-    owner: "Soekarno",
-    date: "20/1/2021",
+    title: "Project Alpha Proposal",
+    owner: "Dr. Emily Carter",
+    date: "12/2/2023",
   },
   {
     no: 2,
-    title: "Surat Keputusan",
-    owner: "Soeharto",
-    date: "15/2/2021",
+    title: "Budget Analysis Report",
+    owner: "Mr. John Smith",
+    date: "5/3/2022",
   },
   {
     no: 3,
-    title: "Rencana Pembangunan",
-    owner: "Habibie",
-    date: "10/3/2021",
+    title: "Employee Handbook",
+    owner: "HR Department",
+    date: "18/4/2021",
   },
   {
     no: 4,
-    title: "Peraturan Pemerintah",
-    owner: "Megawati",
-    date: "5/4/2021",
+    title: "Annual Sales Review",
+    owner: "Ms. Lisa Johnson",
+    date: "10/5/2022",
   },
   {
     no: 5,
-    title: "Laporan Tahunan",
-    owner: "Gus Dur",
-    date: "25/5/2021",
+    title: "Marketing Strategy 2024",
+    owner: "Marketing Team",
+    date: "7/6/2023",
   },
   {
     no: 6,
-    title: "Dokumen Kerjasama",
-    owner: "SBY",
-    date: "30/6/2021",
+    title: "Technical Specification Document",
+    owner: "Engineering Dept",
+    date: "25/7/2021",
   },
   {
     no: 7,
-    title: "Laporan Keuangan",
-    owner: "Jokowi",
-    date: "15/7/2021",
+    title: "Legal Compliance Report",
+    owner: "Legal Team",
+    date: "30/8/2022",
   },
   {
     no: 8,
-    title: "Rencana Anggaran",
-    owner: "Jokowi",
-    date: "1/8/2021",
+    title: "Customer Feedback Summary",
+    owner: "Support Team",
+    date: "14/9/2021",
   },
   {
     no: 9,
-    title: "Nota Kesepahaman",
-    owner: "SBY",
-    date: "10/9/2021",
+    title: "Product Launch Plan",
+    owner: "Product Management",
+    date: "3/10/2023",
   },
   {
     no: 10,
-    title: "Strategi Nasional",
-    owner: "Habibie",
-    date: "20/10/2021",
+    title: "Quarterly Financial Statements",
+    owner: "Finance Department",
+    date: "20/11/2022",
   },
 ];
 
-export default function Signed() {
+export default function Unsigned() {
   return (
     <div className="rounded-xl bg-white overflow-hidden shadow-md">
       <div className="p-4 bg-gradient-to-tr from-[#004DA3] to-[#1CC8EE] text-white font-bold text-xl lg:text-2xl">
