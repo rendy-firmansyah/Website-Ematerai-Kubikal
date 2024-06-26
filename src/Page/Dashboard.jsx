@@ -20,7 +20,7 @@ const Dashboard = () => {
           <img
             src={Cartoon}
             alt=""
-            className="w-28 lg:w-40 absolute bottom-0 right-4"
+            className="w-28 lg:w-40 absolute bottom-0 right-4 animate-up"
           />
         </div>
         <div className="grid lg:grid-cols-2 gap-4">
