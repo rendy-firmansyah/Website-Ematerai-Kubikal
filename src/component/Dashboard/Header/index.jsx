@@ -2,7 +2,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const DashboardHeader = ({ setSidebarOpen, sidebarOpen }) => {
   return (
-    <div className="sticky top-0 bg-white flex w-full justify-between lg:justify-end p-4 shadow-sm">
+    <div className="sticky top-0 z-50 bg-white flex w-full justify-between lg:justify-end p-4 shadow-sm">
       <button
         aria-controls="sidebar"
         onClick={(e) => {
