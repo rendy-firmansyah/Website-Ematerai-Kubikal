@@ -1,9 +1,11 @@
+import React from "react";
 import Cartoon from "../assets/img/dashboard/cartoon.svg";
 import { HiMiniDocumentText } from "react-icons/hi2";
 import { HiMiniDocumentCheck } from "react-icons/hi2";
 import { FaUser } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
-const Dashboard = () => {
+const DashboardUser = () => {
   return (
     <div>
       <section className="grid md:grid-cols-2 gap-4">
@@ -46,10 +48,15 @@ const Dashboard = () => {
             <div className="max-h-16 h-full max-w-16 w-full p-2.5 flex items-center justify-center border-2 border-cyan-500 rounded-full">
               <FaUser className="h-full w-full text-cyan-500" />
             </div>
-            <div className="mx-auto" to="/beli-saldo">
-              <h3 className="text-xl text-center">Rp. 100.000</h3>
-              <h4 className="text-base">Isi Saldo</h4>
-            </div>
+            <NavLink
+              to="/beli-saldo"
+              className="text-black no-underline block mx-auto text-center"
+            >
+              <div className="mx-auto">
+                <h3 className="text-xl text-center">Rp. 100.000</h3>
+                <h4 className="text-base">Isi Saldo</h4>
+              </div>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -57,4 +64,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardUser;
