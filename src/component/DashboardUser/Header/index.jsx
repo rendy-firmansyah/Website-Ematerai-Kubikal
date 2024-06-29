@@ -16,7 +16,7 @@ const DashboardHeader = ({ setSidebarOpen, sidebarOpen }) => {
       <div>
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full bg-blue-500"></div>
-          <span>Admin</span>
+          <span>User</span>
         </div>
       </div>
     </div>

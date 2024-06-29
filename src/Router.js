@@ -20,6 +20,10 @@ import Dashboard from "./Page/Dashboard";
 import Signed from "./Page/Documents/Signed";
 import Unsigned from "./Page/Documents/Unsigned";
 import DashboardLayout from "./component/DashboardLayout";
+import DashboardLayoutUser from "./component/DashboardLayoutUser";
+import DashboardUser from "./Page/DashboardUser";
+import RiwayatPembubutan from "./Page/Riwayat/RiwayatPembubutan";
+import RiwayatPembelian from "./Page/Riwayat/RiwayatPembelian";
 
 const Router = () => {
   return (
@@ -48,6 +52,18 @@ const Router = () => {
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/documents/signed" element={<Signed />} />
+            <Route path="/documents/unsigned" element={<Unsigned />} />
+          </Route>
+          <Route element={<DashboardLayoutUser />}>
+            <Route path="/dashboard-user" element={<DashboardUser />} />
+            <Route
+              path="/riwayat/riwayat-pembubutan"
+              element={<RiwayatPembubutan />}
+            />
+            <Route
+              path="/riwayat/riwayat-pembelian"
+              element={<RiwayatPembelian />}
+            />
             <Route path="/documents/unsigned" element={<Unsigned />} />
           </Route>
         </Routes>
