@@ -1,125 +1,127 @@
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import DataTable from "../../component/Dashboard/DataTable";
+import Modal from "../../component/Dashboard/Modal";
+import EditDocumentForm from "../../component/Dashboard/EditDocumentForm";
 
 export default function Unsigned() {
-  const data = useMemo(
+  const initialData = useMemo(
     () => [
       {
-        no: 1,
+        id: 1,
         title: "Project Alpha Proposal",
         owner: "Dr. Emily Carter",
         date: "12/2/2023",
       },
       {
-        no: 2,
+        id: 2,
         title: "Budget Analysis Report",
         owner: "Mr. John Smith",
         date: "5/3/2022",
       },
       {
-        no: 3,
+        id: 3,
         title: "Employee Handbook",
         owner: "HR Department",
         date: "18/4/2021",
       },
       {
-        no: 4,
+        id: 4,
         title: "Annual Sales Review",
         owner: "Ms. Lisa Johnson",
         date: "10/5/2022",
       },
       {
-        no: 5,
+        id: 5,
         title: "Marketing Strategy 2024",
         owner: "Marketing Team",
         date: "7/6/2023",
       },
       {
-        no: 6,
+        id: 6,
         title: "Technical Specification Document",
         owner: "Engineering Dept",
         date: "25/7/2021",
       },
       {
-        no: 7,
+        id: 7,
         title: "Legal Compliance Report",
         owner: "Legal Team",
         date: "30/8/2022",
       },
       {
-        no: 8,
+        id: 8,
         title: "Customer Feedback Summary",
         owner: "Support Team",
         date: "14/9/2021",
       },
       {
-        no: 9,
+        id: 9,
         title: "Product Launch Plan",
         owner: "Product Management",
         date: "3/10/2023",
       },
       {
-        no: 10,
+        id: 10,
         title: "Quarterly Financial Statements",
         owner: "Finance Department",
         date: "20/11/2022",
       },
       {
-        no: 11,
+        id: 11,
         title: "Dokumen Negara",
         owner: "Soekarno",
         date: "20/1/2021",
       },
       {
-        no: 12,
+        id: 12,
         title: "Surat Keputusan",
         owner: "Soeharto",
         date: "15/2/2021",
       },
       {
-        no: 13,
+        id: 13,
         title: "Rencana Pembangunan",
         owner: "Habibie",
         date: "10/3/2021",
       },
       {
-        no: 14,
+        id: 14,
         title: "Peraturan Pemerintah",
         owner: "Megawati",
         date: "5/4/2021",
       },
       {
-        no: 15,
+        id: 15,
         title: "Laporan Tahunan",
         owner: "Gus Dur",
         date: "25/5/2021",
       },
       {
-        no: 16,
+        id: 16,
         title: "Dokumen Kerjasama",
         owner: "SBY",
         date: "30/6/2021",
       },
       {
-        no: 17,
+        id: 17,
         title: "Laporan Keuangan",
         owner: "Jokowi",
         date: "15/7/2021",
       },
       {
-        no: 18,
+        id: 18,
         title: "Rencana Anggaran",
         owner: "Jokowi",
         date: "1/8/2021",
       },
       {
-        no: 19,
+        id: 19,
         title: "Nota Kesepahaman",
         owner: "SBY",
         date: "10/9/2021",
       },
       {
-        no: 20,
+        id: 20,
         title: "Strategi Nasional",
         owner: "Habibie",
         date: "20/10/2021",
@@ -128,11 +130,45 @@ export default function Unsigned() {
     []
   );
 
+  const [data, setData] = useState(initialData);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingRow, setEditingRow] = useState(null);
+
+  const openModal = (row) => {
+    setEditingRow(row);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setEditingRow(null);
+  };
+
+  const formatDate = (isoDate) => {
+    const [year, month, day] = isoDate.split("-");
+
+    const dayFormatted = parseInt(day, 10);
+    const monthFormatted = parseInt(month, 10);
+    return `${dayFormatted}/${monthFormatted}/${year}`;
+  };
+
+  const handleSave = (editedData) => {
+    editedData.date = formatDate(editedData.date);
+
+    setData((prev) =>
+      prev.map((item) =>
+        item.id === editedData.id ? { ...item, ...editedData } : item
+      )
+    );
+
+    closeModal();
+  };
+
   const columns = useMemo(
     () => [
       {
         header: "#",
-        accessorKey: "no",
+        accessorKey: "id",
         enableColumnFilter: false,
       },
       {
@@ -149,10 +185,26 @@ export default function Unsigned() {
       },
       {
         header: "Actions",
-        accessorKey: "no",
         enableColumnFilter: false,
         cell: ({ row }) => (
           <div className="flex items-center space-x-3.5 justify-center">
+            <button
+              className="hover:text-orange-500"
+              onClick={() => openModal(row.original)}>
+              <svg
+                stroke="currentColor"
+                fill="none"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                height="18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"></path>
+              </svg>
+            </button>
             <button className="hover:text-blue-500">
               <svg
                 className="fill-current"
@@ -171,7 +223,7 @@ export default function Unsigned() {
                 />
               </svg>
             </button>
-            <button className="hover:text-red-500">
+            <button className="hover:text-red-600">
               <svg
                 className="fill-current"
                 width="18"
@@ -209,6 +261,13 @@ export default function Unsigned() {
         Unsigned Documents
       </div>
       <DataTable data={data} columns={columns} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} title={"Edit Document"}>
+        <EditDocumentForm
+          rowData={editingRow}
+          onSave={handleSave}
+          onCancel={closeModal}
+        />
+      </Modal>
     </div>
   );
 }

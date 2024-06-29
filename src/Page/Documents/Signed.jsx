@@ -5,121 +5,121 @@ export default function Signed() {
   const data = useMemo(
     () => [
       {
-        no: 1,
+        id: 1,
         title: "Dokumen Negara",
         owner: "Soekarno",
         date: "20/1/2021",
       },
       {
-        no: 2,
+        id: 2,
         title: "Surat Keputusan",
         owner: "Soeharto",
         date: "15/2/2021",
       },
       {
-        no: 3,
+        id: 3,
         title: "Rencana Pembangunan",
         owner: "Habibie",
         date: "10/3/2021",
       },
       {
-        no: 4,
+        id: 4,
         title: "Peraturan Pemerintah",
         owner: "Megawati",
         date: "5/4/2021",
       },
       {
-        no: 5,
+        id: 5,
         title: "Laporan Tahunan",
         owner: "Gus Dur",
         date: "25/5/2021",
       },
       {
-        no: 6,
+        id: 6,
         title: "Dokumen Kerjasama",
         owner: "SBY",
         date: "30/6/2021",
       },
       {
-        no: 7,
+        id: 7,
         title: "Laporan Keuangan",
         owner: "Jokowi",
         date: "15/7/2021",
       },
       {
-        no: 8,
+        id: 8,
         title: "Rencana Anggaran",
         owner: "Jokowi",
         date: "1/8/2021",
       },
       {
-        no: 9,
+        id: 9,
         title: "Nota Kesepahaman",
         owner: "SBY",
         date: "10/9/2021",
       },
       {
-        no: 10,
+        id: 10,
         title: "Strategi Nasional",
         owner: "Habibie",
         date: "20/10/2021",
       },
       {
-        no: 11,
+        id: 11,
         title: "Project Alpha Proposal",
         owner: "Dr. Emily Carter",
         date: "12/2/2023",
       },
       {
-        no: 12,
+        id: 12,
         title: "Budget Analysis Report",
         owner: "Mr. John Smith",
         date: "5/3/2022",
       },
       {
-        no: 13,
+        id: 13,
         title: "Employee Handbook",
         owner: "HR Department",
         date: "18/4/2021",
       },
       {
-        no: 14,
+        id: 14,
         title: "Annual Sales Review",
         owner: "Ms. Lisa Johnson",
         date: "10/5/2022",
       },
       {
-        no: 15,
+        id: 15,
         title: "Marketing Strategy 2024",
         owner: "Marketing Team",
         date: "7/6/2023",
       },
       {
-        no: 16,
+        id: 16,
         title: "Technical Specification Document",
         owner: "Engineering Dept",
         date: "25/7/2021",
       },
       {
-        no: 17,
+        id: 17,
         title: "Legal Compliance Report",
         owner: "Legal Team",
         date: "30/8/2022",
       },
       {
-        no: 18,
+        id: 18,
         title: "Customer Feedback Summary",
         owner: "Support Team",
         date: "14/9/2021",
       },
       {
-        no: 19,
+        id: 19,
         title: "Product Launch Plan",
         owner: "Product Management",
         date: "3/10/2023",
       },
       {
-        no: 20,
+        id: 20,
         title: "Quarterly Financial Statements",
         owner: "Finance Department",
         date: "20/11/2022",
@@ -132,7 +132,7 @@ export default function Signed() {
     () => [
       {
         header: "#",
-        accessorKey: "no",
+        accessorKey: "id",
         enableColumnFilter: false,
       },
       {
@@ -149,7 +149,6 @@ export default function Signed() {
       },
       {
         header: "Actions",
-        accessorKey: "no",
         enableColumnFilter: false,
         cell: ({ row }) => (
           <div className="flex items-center space-x-3.5 justify-center">
