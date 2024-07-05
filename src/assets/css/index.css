@@ -55,3 +55,16 @@
         padding: 64px !important;
     }
 }
+
+@keyframes translateUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-up {
+  animation: translateUp 2s ease-in-out infinite alternate;
+}
