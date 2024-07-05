@@ -120,7 +120,7 @@ const UploadMateraiInstan = () => {
                     fill="currentFill"
                   />
                 </svg>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col md:flex-row items-center gap-4">
                   <span className="font-semibold text-lg">{FileName}</span>
                   <span className="text-gray-500 text-lg font-semibold">
                     {(PdfFile.length / 1024).toFixed(2)} KB

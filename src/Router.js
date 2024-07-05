@@ -16,6 +16,7 @@ import Profile from "./Page/Profile";
 import AkunSaya from "./component/AkunSaya";
 import ProfileUbahPassword from "./component/ProfileUbahPassword";
 import ProfileHapusAkun from "./component/ProfileHapusAkun";
+import BlogDetail from "./Page/BlogDetail";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
           <Route path="/beli-saldo" element={<BeliSaldo />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog-detail" element={<BlogDetail/>} />
           <Route path="/produktivitas" element={<Produktivitas />} />
           <Route path="/bisnis" element={<Bisnis />} />
           <Route path="/event" element={<Event />} />

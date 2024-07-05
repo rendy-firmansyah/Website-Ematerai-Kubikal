@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
@@ -20,9 +21,9 @@ const Features = () => {
                 fitur-fitur yang Anda inginkan.
               </div>
               <div className="flex gap-4 items-center mt-8">
-                <div className="bg-[#7C7CFC] active:scale-90 transition duration-400 transform hover:shadow-xl rounded-[6px] shadow-md px-4 py-4 text-[16px] font-[400] text-white uppercase leading-normal">
+                <Link to='/login' className="bg-[#7C7CFC] no-underline active:scale-90 transition duration-400 transform hover:shadow-xl rounded-[6px] shadow-md px-4 py-4 text-[16px] font-[400] text-white uppercase leading-normal">
                   Jadilah Yang Pertama
-                </div>
+                </Link>
               </div>
             </div>
             <div className=" max-w-full mt-0 sm:text-left sm:ml-8 ">
@@ -160,9 +161,9 @@ const Features = () => {
                 terintegrasi dalam satu aplikasi.
               </h1>
               <div className="flex justify-center mt-8">
-                <button className="bg-[#7C7CFC] hover:bg-[#5656ed] text-white font-medium py-2 px-4 rounded">
+                <Link to='/login' className="bg-[#7C7CFC] no-underline hover:bg-[#5656ed] text-white font-medium py-2 px-4 rounded">
                   JADI YANG PERTAMA
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { FaFile } from "react-icons/fa6";
 import materai from "../assets/img/materai1000.svg";
 import { FiZoomIn, FiZoomOut } from "react-icons/fi";
-import Draggable, { DraggableCore } from "react-draggable";
 import { IoIosChatbubbles, IoIosCloseCircle } from "react-icons/io";
 import materai2 from "../assets/img/meterai-elektronik-10000.jpg";
 import File from "../assets/img/signature.png";
@@ -14,6 +13,8 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import PopUpPembayaran from "../component/PopUpPembayaran";
 import { Bounce, toast } from "react-toastify";
+import { FaFilePen } from "react-icons/fa6";
+import Draggable from "react-draggable";
 
 const ProsesMaterai = () => {
   const [showMaterai, setShowMaterai] = useState(null);
@@ -23,6 +24,7 @@ const ProsesMaterai = () => {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [TandaTangan, setTandaTangan] = useState(null);
   const [Pembayaran, setPembayaran] = useState(false);
+  const [Menu, setMenu] = useState(false);
   const location = useLocation();
 
   const materaiRef = useRef(null);
@@ -36,6 +38,9 @@ const ProsesMaterai = () => {
   function onDocumentLoadSuccess({ numPages }) {
     setNumPage(numPages);
   }
+  const showMenu = () => {
+    setMenu(!Menu);
+  };
 
   const removeSignature = () => {
     setTandaTangan(null);
@@ -94,7 +99,6 @@ const ProsesMaterai = () => {
     }
   };
 
-
   return (
     <div>
       {Pembayaran && (
@@ -150,7 +154,7 @@ const ProsesMaterai = () => {
       )}
 
       <header className="bg-white shadow-md z-20 w-screen fixed left-0 top-0 overflow-auto">
-        <div className="flex justify-between px-4 sm:px-10 py-4 items-center w-fit min-w-full flex-nowrap">
+        <div className="flex justify-between px-4 md:px-10 py-4 items-center w-fit min-w-full flex-nowrap">
           <div className="flex items-center gap-3 mr-2 text-ellipsis overflow-hidden whitespace-nowrap">
             <FaFile className="text-xl text-[#7C7CFC]" />
             <span>
@@ -170,7 +174,19 @@ const ProsesMaterai = () => {
         </div>
       </header>
 
-      <section className="bg-white top-0 hidden mb xl:block w-[360px] fixed z-10 transition-all duration-300 overflow-auto left-0">
+      <button
+        onClick={showMenu}
+        className="md:hidden flex items-center gap-2 bg-[#7C7CFC] hover:bg-purple-400 text-white rounded px-4 py-2 whitespace-nowrap fixed bottom-36 left-4 z-20"
+      >
+        <FaFilePen />
+        <span>Pilih Produk</span>
+      </button>
+
+      <section
+        className={`bg-white top-0 ${
+          Menu ? "block" : "hidden"
+        }  mb xl:block w-[360px] fixed z-10 transition-all duration-300 overflow-auto left-0`}
+      >
         <div className="relative p-3 mt-[5rem] flex flex-col h-full">
           <div className="space-y-4 mt-2">
             <button
@@ -261,7 +277,7 @@ const ProsesMaterai = () => {
 
       <section className="bg-[#E4E7EC] h-full relative mt-20 md:mt-0 xl:ml-[360px]">
         <div className="overflow-x-auto pt-[6rem] h-full text-center ">
-          <div className="inline-block border-none p-3" role="presentation">
+          <div className="inline-block  border-none p-3" role="presentation">
             {location.state.PdfFile && (
               <Document
                 file={location.state.PdfFile}

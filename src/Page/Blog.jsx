@@ -2,6 +2,8 @@ import React from "react";
 
 import { IoSearchSharp } from "react-icons/io5";
 import blog from "../assets/img/blog.png";
+import blog2 from "../assets/img/blog2.jpg";
+import blog3 from "../assets/img/blog3.jpg";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Footer from "../component/Footer";
 import letter from "../assets/img/letter.png";
@@ -75,7 +77,7 @@ function Blog() {
         <article className="w-full border-2 ">
           <a href="/blog-detail">
             <div className="overflow-hidden relative group">
-              <img className="w-full" src={blog} alt="" />
+              <img className="w-full" src={blog2} alt="" />
               <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
                 <FaLongArrowAltRight className="font-black text-white" />
               </div>
@@ -83,11 +85,10 @@ function Blog() {
           </a>
           <div className="p-4">
             <h2 className="text-xl font-bold">
-              Cara Membeli Meterai Online yang Resmi dan Aman
+            Mengenal Perbedaan Meterai Elektronik dan Meterai Tempel
             </h2>
             <p>
-              Perkembangan teknologi seperti sekarang ini memang memberikan
-              banyak sekali perubahan,...
+            Meterai elektronik adalah salah satu bentuk dari perkembangan teknologi yang...
             </p>
             <span>30 April, 2024</span>
           </div>
@@ -95,7 +96,7 @@ function Blog() {
         <article className="w-full border-2 ">
           <a href="/blog-detail">
             <div className="overflow-hidden relative group">
-              <img className="w-full" src={blog} alt="" />
+              <img className="w-full" src={blog3} alt="" />
               <div className="absolute w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center tes group-hover:opacity-100  group-hover:bottom-0 transition-opacity duration-300">
                 <FaLongArrowAltRight className="font-black text-white" />
               </div>
@@ -103,11 +104,10 @@ function Blog() {
           </a>
           <div className="p-4">
             <h2 className="text-xl font-bold">
-              Cara Membeli Meterai Online yang Resmi dan Aman
+            Pengertian Apa itu E-Meterai atau Meterai Elektronik dan Serba Serbinya
             </h2>
             <p>
-              Perkembangan teknologi seperti sekarang ini memang memberikan
-              banyak sekali perubahan,...
+            Pandemi di tahun 2020 lalu ini memang memberikan banyak sekali...
             </p>
             <span>30 April, 2024</span>
           </div>

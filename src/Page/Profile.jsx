@@ -20,15 +20,15 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto py-10">
-      <Link to="/" className="py-2 px-4 flex gap-1 no-underline text-black items-center w-32 rounded-full bg-gray-300">
+      <Link to="/" className="py-2 px-4 flex gap-1 mb-5 no-underline text-black items-center w-32 rounded-full bg-gray-300">
         <span><FaArrowLeftLong /></span>
         Kembali
       </Link>
       <header className="mb-8">
         <h1 className="text-center text-2xl font-bold">Akun Saya</h1>
       </header>
-      <div className="flex flex-col items-center md:flex-row md:justify-center gap-8">
-        <div className="flex flex-col items-center md:w-1/3 mt-4">
+      <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-8">
+        <div className="flex flex-col items-center w-full md:w-1/3 mt-4">
           <img
             src={avatar}
             className="rounded-full w-20 mb-2"

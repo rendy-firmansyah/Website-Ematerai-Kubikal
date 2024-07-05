@@ -3,7 +3,7 @@ import { FaUser } from 'react-icons/fa'
 
 const AkunSaya = () => {
   return (
-    <div className="flex flex-col md:w-3/4 space-y-4 ">
+    <div className="flex w-full flex-col md:w-3/4 space-y-4 ">
           <div className="flex items-center gap-2 text-lg font-medium">
             <FaUser />
             <span>Account</span>
@@ -53,7 +53,7 @@ const AkunSaya = () => {
             />
           </div>
 
-          <button className="gap-2 bg-[#7C7CFC] px-6 py-2 w-1/4 text-white font-bold rounded-[4px] mt-4">
+          <button className="gap-2 bg-[#7C7CFC] px-6 py-2 md:w-1/4 text-white font-bold rounded-[4px] mt-4">
             Update Profile
           </button>
         </div>
